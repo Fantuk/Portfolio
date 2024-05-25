@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Inter;
+    cursor: none;
+}
+
+:root
+{
+    --clr1: white;
+    --clr2: black;
+}
+
+body
+{
+    background-color: var(--clr2);
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar-track 
+{
+    background: var(--clr2);   
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: var(--clr1); 
+    border-radius: 20px;  
+}
+
+.cursor-dot
+{
+    width: 10px;
+    height: 10px;
+    background-color: rgba(133, 133, 133, 0.7);
+}
+
+.cursor-outline
+{
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(133, 133, 133, 0.7);
+}
+
+.cursor-dot, .cursor-outline
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.block 
+{
+    visibility: hidden;
+    max-height: 0; 
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, visibility 0s 1s, max-height 0s 1s;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.block.active 
+{
+    visibility: visible; 
+    max-height: 100vh; 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* MAIN BLOCK */
+.large-header 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 100%;
+	background: var(--clr2);
+	overflow: hidden;
+	z-index: 1;
+}
+
+.hero
+{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: var(--clr1);
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+    font-size: 5rem
+}
+
+.hero span
+{
+    font-weight: 600;
+    font-size: 5rem
+}
+
+.rotateBlock
+{
+    position: absolute;
+    text-align: center;
+    color: var(--clr1);
+    padding: 35px 30px 35px;
+    border-radius: 10%;
+    transition: 0.6s;
+    border: 3px solid var(--clr1);
+}
+
+.name
+{
+    text-decoration: none;
+    top: 10%;
+    left: 10%;
+
+}
+
+.age
+{
+    text-decoration: none;
+    top: 65%;
+    left: 75%;
+
+}
+
+.contacts
+{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    top: 94%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+.contacts.first
+{
+    position: absolute;
+}
+
+.icon
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.githubIcon
+{
+    width: 35px;
+    height: 30px;
+}
+
+.vkIcon
+{
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes running-contour {
+  from {
+    background-position: 0 0, 8px 100%, 0 8px, 100% 0;
+  }
+  to {
+    background-position: 8px 0, 0 100%, 0 0, 100% 8px;
+  }
+}
+/* MAIN BLOCK END */
+
+/* ABOUT ME BLOCK */
+.area{    
+    background-color: var(--clr2);
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+.aboutMe
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    color: var(--clr1);
+
+    top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+.aboutMe h1
+{
+    font-size: 3rem;
+}
+
+.selfi
+{
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+}
+
+.text
+{
+    max-width: 500px;
+    min-width: 250px;
+    border: 3px solid var(--clr1);
+    border-radius: 40px;
+    padding: 30px;
+    font-size: 1.25rem;
+}
+
+.text span
+{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+/* ABOUT ME BLOCK END */
+
+/* SKILLS BLOCK */
+.circles_2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles_2 li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    animation: animate_2 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles_2 li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles_2 li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles_2 li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles_2 li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles_2 li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles_2 li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles_2 li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles_2 li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles_2 li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles_2 li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate_2 {
+
+    0%{
+        transform: translateY(-1000px) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(0px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+.skills
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    color: var(--clr1);
+
+    top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+.skills h1
+{
+    font-size: 3rem;
+}
+
+.skillsWrapper
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.skillsList
+{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.skillIcon
+{
+    background: none;
+    width: 70px;
+    height: 70px;
+    transition: 0.6s;
+}
+
+/* SKILLS BLOCK END */
+
+/* PROJECTS */
+.cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px rgba(255, 255, 255, 0.7);
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+  }
+.cube:nth-child(2n) {
+border-color: rgba(255, 255, 255, 0.7);
+}
+.cube:nth-child(2) {
+-webkit-animation-delay: 2s;
+        animation-delay: 2s;
+left: 25vw;
+top: 40vh;
+}
+.cube:nth-child(3) {
+-webkit-animation-delay: 4s;
+        animation-delay: 4s;
+left: 75vw;
+top: 50vh;
+}
+.cube:nth-child(4) {
+-webkit-animation-delay: 6s;
+        animation-delay: 6s;
+left: 90vw;
+top: 10vh;
+}
+.cube:nth-child(5) {
+-webkit-animation-delay: 8s;
+        animation-delay: 8s;
+left: 10vw;
+top: 85vh;
+}
+.cube:nth-child(6) {
+-webkit-animation-delay: 10s;
+        animation-delay: 10s;
+left: 50vw;
+top: 10vh;
+}
+
+@-webkit-keyframes cube {
+from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+}
+to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+}
+}
+
+@keyframes cube {
+from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+}
+to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+    border-radius: 5px;
+}
+}
+
+.projects
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--clr1);
+    padding: 30px;
+}
+
+.projects h1
+{
+    font-size: 3rem;
+}
+
+.projectsWrapper
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid var(--clr1);
+    border-radius: 35px;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.title {
+    color: var(--clr1);
+    font-weight: 600;
+    font-size: 2rem;
+    transition: bottom 0.3s ease; 
+}
+
+.projImg
+{
+    width: 400px;
+    height: 200px;
+    border-radius: 35px;
+    z-index: 1;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.contacts.proj {
+    transform: translate3d(0,0,0);
+}
+/* PROJECTS END */
+
+/* ADAPTIVE */
+@media screen and (max-width: 1440px) 
+{
+    *
+    {
+        font-size: 14px;
+    }
+
+    .projImg
+    {
+        width: 300px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 945px)
+{
+    .circles li 
+    {
+        animation: none;
+    }
+
+    .circles_2 li 
+    {
+        animation: none;
+    }
+
+    .cube
+    {
+        animation: none;
+    }
+
+    .skillsWrapper
+    {
+        flex-direction: column;
+        gap: 40px;
+    }
+} 
+
+@media screen and (max-width: 850px)
+{
+    .name
+    {
+        top: 20%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .age
+    {
+        top: 70%;
+        left: 50%;
+        text-align: center;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .text
+    {
+        text-align: center;
+    }
+
+    .projectsWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+} 
+
+@media screen and (max-width: 500px)
+{
+    *
+    {
+        font-size: 10px;
+    }
+
+    .selfi
+    {
+        width: 90px;
+        height: 90px;
+    }
+
+    .text
+    {
+        padding: 25px;
+    }
+
+    .skills
+    {
+        gap: 60px;
+    }
+
+    .skillsWrapper
+    {
+        gap: 30px;
+    }
+
+    .skillsList
+    {
+        gap: 40px;
+    }
+
+    .skillIcon
+    {
+        width: 45px;
+        height: 45px;
+    }
+
+    .project
+    {
+        padding: 15px;
+    }
+
+    .projImg
+    {
+        width: 250px;
+        height: 125px;
+    }
+}
+
+@media (hover:hover)
+{
+    .rotateBlock:hover{
+        background-image: linear-gradient(90deg, var(--clr1) 50%, transparent 50%),
+        linear-gradient(90deg, var(--clr1) 50%, transparent 50%),
+        linear-gradient(0, var(--clr1) 50%, transparent 50%), 
+        linear-gradient(0, var(--clr1) 50%, transparent 50%);
+    
+        background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+        background-size: 8px 3px, 8px 3px, 3px 8px, 3px 8px;
+        animation: running-contour .6s linear infinite;
+        border: none;
+        transform: scale(1.2);
+    }
+
+    .icon:hover{
+        transform: scale(1.2);
+    }
+
+    .skillIcon:hover
+    {
+        transform: scale(1.2);
+        box-shadow: 0 0px 20px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .project:hover
+    {
+        transform: scale(1.1);
+    }
+}
+/* ADAPTIVE END */
