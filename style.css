@@ -653,6 +653,11 @@ to {
 
 @media screen and (max-width: 945px)
 {
+    .cursor-dot, .cursor-outline
+    {
+        display: none;
+    }
+
     .circles li 
     {
         animation: none;
